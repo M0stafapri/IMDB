@@ -26,7 +26,7 @@ namespace eTickets.Data.Services
                 ImageURL = data.ImageURL,
                 CinemaId = data.CinemaId,
                 MovieCategory = data.MovieCategory,
-                ProducerId = data.ProducerId
+                DirectorId = data.DirectorId
             };
             await _context.Movies.AddAsync(newMovie);
             await _context.SaveChangesAsync();
@@ -48,7 +48,7 @@ namespace eTickets.Data.Services
         {
             var movieDetails = await _context.Movies
                 .Include(c => c.Cinema)
-                .Include(p => p.Producer)
+                .Include(p => p.Director)
                 .Include(am => am.Actors_Movies).ThenInclude(a => a.Actor)
                 .FirstOrDefaultAsync(n => n.Id == id);
 
@@ -61,7 +61,7 @@ namespace eTickets.Data.Services
             {
                 Actors = await _context.Actors.OrderBy(n => n.FullName).ToListAsync(),
                 Cinemas = await _context.Cinemas.OrderBy(n => n.Name).ToListAsync(),
-                Producers = await _context.Producers.OrderBy(n => n.FullName).ToListAsync()
+                Directors = await _context.Directors.OrderBy(n => n.FullName).ToListAsync()
             };
 
             return response;
@@ -78,7 +78,7 @@ namespace eTickets.Data.Services
                 dbMovie.ImageURL = data.ImageURL;
                 dbMovie.CinemaId = data.CinemaId;
                 dbMovie.MovieCategory = data.MovieCategory;
-                dbMovie.ProducerId = data.ProducerId;
+                dbMovie.DirectorId = data.DirectorId;
                 await _context.SaveChangesAsync();
             }
 

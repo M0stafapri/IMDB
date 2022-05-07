@@ -97,39 +97,39 @@ namespace eTickets.Data
                     });
                     context.SaveChanges();
                 }
-                //Producers
-                if (!context.Producers.Any())
+                //Directors
+                if (!context.Directors.Any())
                 {
-                    context.Producers.AddRange(new List<Producer>()
+                    context.Directors.AddRange(new List<Director>()
                     {
-                        new Producer()
+                        new Director()
                         {
-                            FullName = "Producer 1",
+                            FullName = "Director 1",
                             Bio = "This is the Bio of the first actor",
                             ProfilePictureURL = "http://dotnethow.net/images/producers/producer-1.jpeg"
 
                         },
-                        new Producer()
+                        new Director()
                         {
-                            FullName = "Producer 2",
+                            FullName = "Director 2",
                             Bio = "This is the Bio of the second actor",
                             ProfilePictureURL = "http://dotnethow.net/images/producers/producer-2.jpeg"
                         },
-                        new Producer()
+                        new Director()
                         {
-                            FullName = "Producer 3",
+                            FullName = "Director 3",
                             Bio = "This is the Bio of the second actor",
                             ProfilePictureURL = "http://dotnethow.net/images/producers/producer-3.jpeg"
                         },
-                        new Producer()
+                        new Director()
                         {
-                            FullName = "Producer 4",
+                            FullName = "Director 4",
                             Bio = "This is the Bio of the second actor",
                             ProfilePictureURL = "http://dotnethow.net/images/producers/producer-4.jpeg"
                         },
-                        new Producer()
+                        new Director()
                         {
-                            FullName = "Producer 5",
+                            FullName = "Director 5",
                             Bio = "This is the Bio of the second actor",
                             ProfilePictureURL = "http://dotnethow.net/images/producers/producer-5.jpeg"
                         }
@@ -147,7 +147,7 @@ namespace eTickets.Data
                             Description = "This is the Life movie description",
                             ImageURL = "http://dotnethow.net/images/movies/movie-3.jpeg",
                             CinemaId = 3,
-                            ProducerId = 3,
+                            DirectorId = 3,
                             MovieCategory = MovieCategory.Documentary
                         },
                         new Movie()
@@ -156,7 +156,7 @@ namespace eTickets.Data
                             Description = "This is the Shawshank Redemption description",
                             ImageURL = "http://dotnethow.net/images/movies/movie-1.jpeg",
                             CinemaId = 1,
-                            ProducerId = 1,
+                            DirectorId = 1,
                             MovieCategory = MovieCategory.Action
                         },
                         new Movie()
@@ -165,7 +165,7 @@ namespace eTickets.Data
                             Description = "This is the Ghost movie description",
                             ImageURL = "http://dotnethow.net/images/movies/movie-4.jpeg",
                             CinemaId = 4,
-                            ProducerId = 4,
+                            DirectorId = 4,
                             MovieCategory = MovieCategory.Horror
                         },
                         new Movie()
@@ -174,7 +174,7 @@ namespace eTickets.Data
                             Description = "This is the Race movie description",
                             ImageURL = "http://dotnethow.net/images/movies/movie-6.jpeg",
                             CinemaId = 1,
-                            ProducerId = 2,
+                            DirectorId = 2,
                             MovieCategory = MovieCategory.Documentary
                         },
                         new Movie()
@@ -183,7 +183,7 @@ namespace eTickets.Data
                             Description = "This is the Scoob movie description",
                             ImageURL = "http://dotnethow.net/images/movies/movie-7.jpeg",
                             CinemaId = 1,
-                            ProducerId = 3,
+                            DirectorId = 3,
                             MovieCategory = MovieCategory.Cartoon
                         },
                         new Movie()
@@ -192,7 +192,7 @@ namespace eTickets.Data
                             Description = "This is the Cold Soles movie description",
                             ImageURL = "http://dotnethow.net/images/movies/movie-8.jpeg",
                             CinemaId = 1,
-                            ProducerId = 5,
+                            DirectorId = 5,
                             MovieCategory = MovieCategory.Drama
                         }
                     });

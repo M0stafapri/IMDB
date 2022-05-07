@@ -60,13 +60,10 @@ namespace eTickets.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Price = table.Column<double>(type: "float", nullable: false),
                     ImageURL = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     MovieCategory = table.Column<int>(type: "int", nullable: false),
                     CinemaId = table.Column<int>(type: "int", nullable: false),
-                    ProducerId = table.Column<int>(type: "int", nullable: false)
+                    DirectorId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -78,9 +75,9 @@ namespace eTickets.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Movies_Prducers_ProducerId",
-                        column: x => x.ProducerId,
-                        principalTable: "Prducers",
+                        name: "FK_Movies_Directors_DirectorId",
+                        column: x => x.DirectorId,
+                        principalTable: "Directors",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -120,9 +117,9 @@ namespace eTickets.Migrations
                 column: "CinemaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Movies_ProducerId",
+                name: "IX_Movies_DirectorId",
                 table: "Movies",
-                column: "ProducerId");
+                column: "DirectorId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

@@ -8,7 +8,7 @@ namespace eTickets.Migrations
         {
             migrationBuilder.AlterColumn<string>(
                 name: "ProfilePictureURL",
-                table: "Producers",
+                table: "Directors",
                 type: "nvarchar(max)",
                 nullable: false,
                 defaultValue: "",
@@ -18,7 +18,7 @@ namespace eTickets.Migrations
 
             migrationBuilder.AlterColumn<string>(
                 name: "FullName",
-                table: "Producers",
+                table: "Directors",
                 type: "nvarchar(50)",
                 maxLength: 50,
                 nullable: false,
@@ -29,7 +29,7 @@ namespace eTickets.Migrations
 
             migrationBuilder.AlterColumn<string>(
                 name: "Bio",
-                table: "Producers",
+                table: "Directors",
                 type: "nvarchar(max)",
                 nullable: false,
                 defaultValue: "",
@@ -119,7 +119,6 @@ namespace eTickets.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Amount = table.Column<int>(type: "int", nullable: false),
-                    Price = table.Column<double>(type: "float", nullable: false),
                     MovieId = table.Column<int>(type: "int", nullable: false),
                     OrderId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -161,7 +160,7 @@ namespace eTickets.Migrations
 
             migrationBuilder.AlterColumn<string>(
                 name: "ProfilePictureURL",
-                table: "Producers",
+                table: "Directors",
                 type: "nvarchar(max)",
                 nullable: true,
                 oldClrType: typeof(string),
@@ -169,7 +168,7 @@ namespace eTickets.Migrations
 
             migrationBuilder.AlterColumn<string>(
                 name: "FullName",
-                table: "Producers",
+                table: "Directors",
                 type: "nvarchar(max)",
                 nullable: true,
                 oldClrType: typeof(string),
@@ -178,7 +177,7 @@ namespace eTickets.Migrations
 
             migrationBuilder.AlterColumn<string>(
                 name: "Bio",
-                table: "Producers",
+                table: "Directors",
                 type: "nvarchar(max)",
                 nullable: true,
                 oldClrType: typeof(string),

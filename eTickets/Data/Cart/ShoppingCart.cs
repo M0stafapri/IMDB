@@ -6,6 +6,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using eTickets.Data;
+using eTickets.Data.Base;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eTickets.Data.Cart
 {
@@ -15,6 +19,10 @@ namespace eTickets.Data.Cart
 
         public string ShoppingCartId { get; set; }
         public List<ShoppingCartItem> ShoppingCartItems { get; set; }
+
+        [Display(Name = "Movie name")]
+        [Required(ErrorMessage = "Name is required")]
+        public string Name { get; set; }
 
         public ShoppingCart(AppDbContext context)
         {
@@ -75,7 +83,6 @@ namespace eTickets.Data.Cart
             return ShoppingCartItems ?? (ShoppingCartItems = _context.ShoppingCartItems.Where(n => n.ShoppingCartId == ShoppingCartId).Include(n => n.Movie).ToList());
         }
 
-        public double GetShoppingCartTotal() =>  _context.ShoppingCartItems.Where(n => n.ShoppingCartId == ShoppingCartId).Select(n => n.Movie.Price * n.Amount).Sum();
 
         public async Task ClearShoppingCartAsync()
         {

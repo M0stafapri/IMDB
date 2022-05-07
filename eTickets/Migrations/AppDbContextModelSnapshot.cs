@@ -295,8 +295,6 @@ namespace eTickets.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("EndDate")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("ImageURL")
                         .HasColumnType("nvarchar(max)");
@@ -307,20 +305,16 @@ namespace eTickets.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Price")
-                        .HasColumnType("float");
 
-                    b.Property<int>("ProducerId")
+                    b.Property<int>("DirectorId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("StartDate")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CinemaId");
 
-                    b.HasIndex("ProducerId");
+                    b.HasIndex("DirectorId");
 
                     b.ToTable("Movies");
                 });
@@ -359,8 +353,6 @@ namespace eTickets.Migrations
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
 
-                    b.Property<double>("Price")
-                        .HasColumnType("float");
 
                     b.HasKey("Id");
 
@@ -371,7 +363,7 @@ namespace eTickets.Migrations
                     b.ToTable("OrderItems");
                 });
 
-            modelBuilder.Entity("eTickets.Models.Producer", b =>
+            modelBuilder.Entity("eTickets.Models.Director", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -393,7 +385,7 @@ namespace eTickets.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Producers");
+                    b.ToTable("Directors");
                 });
 
             modelBuilder.Entity("eTickets.Models.ShoppingCartItem", b =>
@@ -497,15 +489,15 @@ namespace eTickets.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("eTickets.Models.Producer", "Producer")
+                    b.HasOne("eTickets.Models.Director", "Director")
                         .WithMany("Movies")
-                        .HasForeignKey("ProducerId")
+                        .HasForeignKey("DirectorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Cinema");
 
-                    b.Navigation("Producer");
+                    b.Navigation("Director");
                 });
 
             modelBuilder.Entity("eTickets.Models.OrderItem", b =>
@@ -556,7 +548,7 @@ namespace eTickets.Migrations
                     b.Navigation("OrderItems");
                 });
 
-            modelBuilder.Entity("eTickets.Models.Producer", b =>
+            modelBuilder.Entity("eTickets.Models.Director", b =>
                 {
                     b.Navigation("Movies");
                 });

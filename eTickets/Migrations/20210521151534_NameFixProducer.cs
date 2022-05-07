@@ -2,32 +2,32 @@
 
 namespace eTickets.Migrations
 {
-    public partial class NameFixProducer : Migration
+    public partial class NameFixDirector : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_Movies_Prducers_ProducerId",
+                name: "FK_Movies_Director_DirectorId",
                 table: "Movies");
 
             migrationBuilder.DropPrimaryKey(
-                name: "PK_Prducers",
-                table: "Prducers");
+                name: "PK_Directors",
+                table: "Directors");
 
             migrationBuilder.RenameTable(
-                name: "Prducers",
-                newName: "Producers");
+                name: "Drectors",
+                newName: "Directors");
 
             migrationBuilder.AddPrimaryKey(
-                name: "PK_Producers",
-                table: "Producers",
+                name: "PK_Directors",
+                table: "Directors",
                 column: "Id");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_Movies_Producers_ProducerId",
+                name: "FK_Movies_Directors_DirectorId",
                 table: "Movies",
-                column: "ProducerId",
-                principalTable: "Producers",
+                column: "DirectorId",
+                principalTable: "Directors",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Cascade);
         }
@@ -35,27 +35,27 @@ namespace eTickets.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_Movies_Producers_ProducerId",
+                name: "FK_Movies_Directors_DirectorId",
                 table: "Movies");
 
             migrationBuilder.DropPrimaryKey(
-                name: "PK_Producers",
-                table: "Producers");
+                name: "PK_Directors",
+                table: "Directors");
 
             migrationBuilder.RenameTable(
-                name: "Producers",
-                newName: "Prducers");
+                name: "Directors",
+                newName: "Directors");
 
             migrationBuilder.AddPrimaryKey(
-                name: "PK_Prducers",
-                table: "Prducers",
+                name: "PK_Directors",
+                table: "Directors",
                 column: "Id");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_Movies_Prducers_ProducerId",
+                name: "FK_Movies_Directors_DirectorId",
                 table: "Movies",
-                column: "ProducerId",
-                principalTable: "Prducers",
+                column: "DirectorId",
+                principalTable: "Directors",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Cascade);
         }

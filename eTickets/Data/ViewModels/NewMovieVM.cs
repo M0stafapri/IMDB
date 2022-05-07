@@ -40,8 +40,8 @@ namespace eTickets.Models
         [Required(ErrorMessage = "Movie cinema is required")]
         public int CinemaId { get; set; }
 
-        [Display(Name = "Select a producer")]
-        [Required(ErrorMessage = "Movie producer is required")]
-        public int ProducerId { get; set; }
+        [Display(Name = "Select a Director")]
+        [Required(ErrorMessage = "Movie Director is required")]
+        public int DirectorId { get; set; }
     }
 }

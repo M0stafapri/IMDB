@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace eTickets.Data.Services
 {
-    public class ProducersService: EntityBaseRepository<Producer>, IProducersService
+    public class DirectorsService: EntityBaseRepository<Director>, IDirectorsService
     {
-        public ProducersService(AppDbContext context) : base(context)
+        public DirectorsService(AppDbContext context) : base(context)
         {
         }
     }

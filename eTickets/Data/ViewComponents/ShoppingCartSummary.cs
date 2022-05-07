@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace eTickets.Data.ViewComponents
 {
-    public class ShoppingCartSummary:ViewComponent
+    public class ShoppingCartSummary : ViewComponent
     {
         private readonly ShoppingCart _shoppingCart;
         public ShoppingCartSummary(ShoppingCart shoppingCart)

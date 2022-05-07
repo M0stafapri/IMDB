@@ -42,8 +42,7 @@ namespace eTickets.Controllers
 
             var response = new ShoppingCartVM()
             {
-                ShoppingCart = _shoppingCart,
-                ShoppingCartTotal = _shoppingCart.GetShoppingCartTotal()
+                ShoppingCart = _shoppingCart
             };
 
             return View(response);

@@ -31,8 +31,8 @@
                         </p>
                         <p class="card-text">
                             <b>Director: </b>
-                            <a asp-controller="Producers" asp-action="Details" asp-route-id="@Model.ProducerId">
-                                @Model.Producer.FullName
+                            <a asp-controller="Directors" asp-action="Details" asp-route-id="@Model.DirectorId">
+                                @Model.Director.FullName
                             </a>
                         </p>
                         <p class="card-text"><b>Category: </b>@Model.MovieCategory</p>
@@ -59,9 +59,9 @@
                             <a class="btn btn-outline-primary float-right" asp-action="Index">
                                 Back to List
                             </a>
-                            <a class="btn btn-success text-white  @((DateTime.Now > Model.EndDate) ? "disabled" : "")"
+                            <a class="btn btn-success text-white )"
                                asp-controller="Orders"
-                               asp-action="AddItemToShoppingCart" asp-route-id="@Model.Id"></i><i class="bi bi-bookmark-star-fill"></i> Add to Favorites</a>
+                               asp-action="AddItemToShoppingCart" asp-route-id="@Model.Id"><i> class="bi bi-bookmark-star-fill"></i> Add to Favorites</a>
                         </p>
                     </div>
                 </div>
