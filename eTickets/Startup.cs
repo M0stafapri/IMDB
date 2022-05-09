@@ -40,11 +40,11 @@ namespace eTickets
             services.AddScoped<IDirectorsService, DirectorsService>();
             services.AddScoped<ICinemasService, CinemasService>();
             services.AddScoped<IMoviesService, MoviesService>();
-            services.AddScoped<IOrdersService, OrdersService>();
+            services.AddScoped<IFavoritesService, FavoritesService>();
 
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddScoped(sc => ShoppingCart.GetShoppingCart(sc));
+            services.AddScoped(sc => FavoritesList.GetFavoritesList(sc));
 
             //Authentication and authorization
             services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();

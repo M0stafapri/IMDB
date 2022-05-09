@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace eTickets.Data.ViewComponents
 {
-    public class ShoppingCartSummary : ViewComponent
+    public class FavoritesListSummary : ViewComponent
     {
-        private readonly ShoppingCart _shoppingCart;
-        public ShoppingCartSummary(ShoppingCart shoppingCart)
+        private readonly FavoritesList _favoritesList;
+        public FavoritesListSummary(FavoritesList favoritesList)
         {
-            _shoppingCart = shoppingCart;
+            _favoritesList = favoritesList;
         }
 
         public IViewComponentResult Invoke()
         {
-            var items = _shoppingCart.GetShoppingCartItems();
+            var items = _favoritesList.GetFavoritesListItems();
 
             return View(items.Count);
         }

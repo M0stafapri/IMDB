@@ -36,9 +36,9 @@ namespace eTickets.Data
         public DbSet<Director> Directors { get; set; }
 
 
-        //Orders related tables
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<OrderItem> OrderItems { get; set; }
-        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
+        //Favorites related tables
+        public DbSet<Favorite> Favorites { get; set; }
+        public DbSet<FavoriteItem> FavoriteItems { get; set; }
+        public DbSet<FavoriteListItem> FavoritesListItems { get; set; }
     }
 }

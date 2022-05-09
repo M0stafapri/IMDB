@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace eTickets.Models
 {
-    public class Order
+    public class Favorite
     {
         [Key]
         public int Id { get; set; }
@@ -18,6 +18,6 @@ namespace eTickets.Models
         [ForeignKey(nameof(UserId))]
         public ApplicationUser User { get; set; }
 
-        public List<OrderItem> OrderItems { get; set; }
+        public List<FavoriteItem> FavoriteItems { get; set; }
     }
 }

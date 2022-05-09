@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace eTickets.Models
 {
-    public class ShoppingCartItem
+    public class FavoriteListItem
     {
         [Key]
         public int Id { get; set; }
@@ -15,6 +15,6 @@ namespace eTickets.Models
         public int Amount { get; set; }
 
 
-        public string ShoppingCartId { get; set; }
+        public string FavoritesListId { get; set; }
     }
 }

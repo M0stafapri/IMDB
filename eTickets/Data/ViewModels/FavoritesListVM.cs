@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace eTickets.Data.ViewModels
 {
-    public class ShoppingCartVM
+    public class FavoritesListVM
     {
-        public ShoppingCart ShoppingCart { get; set; }
+        public FavoritesList FavoritesList { get; set; }
 
     }
 }

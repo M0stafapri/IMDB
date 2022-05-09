@@ -10,8 +10,8 @@ using eTickets.Data;
 namespace eTickets.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210926144211_Order_And_OrderItem_Added")]
-    partial class Order_And_OrderItem_Added
+    [Migration("20210926144211_Favorite_And_FavoriteItem_Added")]
+    partial class Favorite_And_FavoriteItem_Added
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -121,7 +121,7 @@ namespace eTickets.Migrations
                     b.ToTable("Movies");
                 });
 
-            modelBuilder.Entity("eTickets.Models.Order", b =>
+            modelBuilder.Entity("eTickets.Models.Favorite", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -136,10 +136,10 @@ namespace eTickets.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Favorites");
                 });
 
-            modelBuilder.Entity("eTickets.Models.OrderItem", b =>
+            modelBuilder.Entity("eTickets.Models.FavoriteItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -152,7 +152,7 @@ namespace eTickets.Migrations
                     b.Property<int>("MovieId")
                         .HasColumnType("int");
 
-                    b.Property<int>("OrderId")
+                    b.Property<int>("FavoriteId")
                         .HasColumnType("int");
 
 
@@ -160,9 +160,9 @@ namespace eTickets.Migrations
 
                     b.HasIndex("MovieId");
 
-                    b.HasIndex("OrderId");
+                    b.HasIndex("FavoriteId");
 
-                    b.ToTable("OrderItems");
+                    b.ToTable("FavoriteItems");
                 });
 
             modelBuilder.Entity("eTickets.Models.Director", b =>
@@ -228,7 +228,7 @@ namespace eTickets.Migrations
                     b.Navigation("Director");
                 });
 
-            modelBuilder.Entity("eTickets.Models.OrderItem", b =>
+            modelBuilder.Entity("eTickets.Models.FavoriteItem", b =>
                 {
                     b.HasOne("eTickets.Models.Movie", "Movie")
                         .WithMany()
@@ -236,15 +236,15 @@ namespace eTickets.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("eTickets.Models.Order", "Order")
-                        .WithMany("OrderItems")
-                        .HasForeignKey("OrderId")
+                    b.HasOne("eTickets.Models.Favorite", "Favorite")
+                        .WithMany("FavoriteItems")
+                        .HasForeignKey("FavoriteId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Movie");
 
-                    b.Navigation("Order");
+                    b.Navigation("Favorite");
                 });
 
             modelBuilder.Entity("eTickets.Models.Actor", b =>
@@ -262,9 +262,9 @@ namespace eTickets.Migrations
                     b.Navigation("Actors_Movies");
                 });
 
-            modelBuilder.Entity("eTickets.Models.Order", b =>
+            modelBuilder.Entity("eTickets.Models.Favorite", b =>
                 {
-                    b.Navigation("OrderItems");
+                    b.Navigation("FavoriteItems");
                 });
 
             modelBuilder.Entity("eTickets.Models.Director", b =>

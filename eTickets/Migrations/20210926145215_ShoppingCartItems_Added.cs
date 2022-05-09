@@ -2,25 +2,25 @@
 
 namespace eTickets.Migrations
 {
-    public partial class ShoppingCartItems_Added : Migration
+    public partial class FavoritesListItems_Added : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "ShoppingCartItems",
+                name: "FavoritesListItems",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     MovieId = table.Column<int>(type: "int", nullable: true),
                     Amount = table.Column<int>(type: "int", nullable: false),
-                    ShoppingCartId = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    FavoritesListId = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ShoppingCartItems", x => x.Id);
+                    table.PrimaryKey("PK_FavoritesListItems", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ShoppingCartItems_Movies_MovieId",
+                        name: "FK_FavoritesListItems_Movies_MovieId",
                         column: x => x.MovieId,
                         principalTable: "Movies",
                         principalColumn: "Id",
@@ -28,15 +28,15 @@ namespace eTickets.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_ShoppingCartItems_MovieId",
-                table: "ShoppingCartItems",
+                name: "IX_FavoritesListItems_MovieId",
+                table: "FavoritesListItems",
                 column: "MovieId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "ShoppingCartItems");
+                name: "FavoritesListItems");
         }
     }
 }

@@ -1,19 +1,19 @@
-﻿@model List<Order>
+﻿@model List<Favorite>
 
 @{ 
-    ViewData["Title"] = "All orders";
+    ViewData["Title"] = "All Favorites";
 }
 
 <div class="row">
     <div class="col-md-8 offset-2">
         <p>
-            <h4>List of all your orders</h4>
+            <h4>List of all your Favorites</h4>
         </p>
 
         <table class="table">
             <thead>
                 <tr>
-                    <th>Order ID</th>
+                    <th>Favorite List</th>
                     <th>Items</th>
                     <th>Total</th>
                     @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
@@ -23,13 +23,13 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var order in Model)
+                @foreach (var favorite in Model)
                 {
                 <tr>
-                    <td class="align-middle">@order.Id</td>
+                    <td class="align-middle">@favorite.Id</td>
                     <td class="align-middle">
                         <ul style="list-style-type:none">
-                            @foreach (var item in order.OrderItems)
+                            @foreach (var item in favorite.FavoriteItems)
                             {
                                 <li>
                                     <div class="alert alert-info" role="alert">
@@ -44,7 +44,7 @@
                     </td>
                     @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                     {
-                        <td class="align-middle"> @order.User.FullName </td>
+                        <td class="align-middle"> @favorite.User.FullName </td>
                     }
                     </tr>
                 }
