@@ -43,7 +43,7 @@ namespace eTickets.Data.Services
                 {
                     Amount = item.Amount,
                     MovieId = item.Movie.Id,
-                    FavoritesId = favorite.Id,
+                    FavoriteId = favorite.Id,
                 };
                 await _context.FavoriteItems.AddAsync(favoritesItem);
             }

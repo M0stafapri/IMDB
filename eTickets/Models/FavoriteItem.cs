@@ -18,8 +18,8 @@ namespace eTickets.Models
         [ForeignKey("MovieId")]
         public Movie Movie { get; set; }
 
-        public int FavoritesId { get; set; }
-        [ForeignKey("FavoritesId")]
+        public int FavoriteId { get; set; }
+        [ForeignKey("FavoriteId")]
         public Favorite Favorite { get; set; }
     }
 }
