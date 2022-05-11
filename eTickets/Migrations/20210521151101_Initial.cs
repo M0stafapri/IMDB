@@ -23,7 +23,7 @@ namespace eTickets.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Cinemas",
+                name: "Profiles",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -34,7 +34,7 @@ namespace eTickets.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Cinemas", x => x.Id);
+                    table.PrimaryKey("PK_Profiles", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -62,16 +62,16 @@ namespace eTickets.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ImageURL = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MovieCategory = table.Column<int>(type: "int", nullable: false),
-                    CinemaId = table.Column<int>(type: "int", nullable: false),
+                    ProfileId = table.Column<int>(type: "int", nullable: false),
                     DirectorId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Movies", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Movies_Cinemas_CinemaId",
-                        column: x => x.CinemaId,
-                        principalTable: "Cinemas",
+                        name: "FK_Movies_Profiles_ProfileId",
+                        column: x => x.ProfileId,
+                        principalTable: "Profiles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -112,9 +112,9 @@ namespace eTickets.Migrations
                 column: "MovieId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Movies_CinemaId",
+                name: "IX_Profiles_ProfileId",
                 table: "Movies",
-                column: "CinemaId");
+                column: "ProfileId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Movies_DirectorId",
@@ -134,7 +134,7 @@ namespace eTickets.Migrations
                 name: "Movies");
 
             migrationBuilder.DropTable(
-                name: "Cinemas");
+                name: "Profile");
 
             migrationBuilder.DropTable(
                 name: "Prducers");

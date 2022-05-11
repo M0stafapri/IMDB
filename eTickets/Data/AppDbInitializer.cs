@@ -20,36 +20,36 @@ namespace eTickets.Data
 
                 context.Database.EnsureCreated();
 
-                //Cinema
-                if (!context.Cinemas.Any())
+                //Profile
+                if (!context.Profiles.Any())
                 {
-                    context.Cinemas.AddRange(new List<Cinema>()
+                    context.Profiles.AddRange(new List<Profile>()
                     {
-                        new Cinema()
+                        new Profile()
                         {
                             Name = "Cinema 1",
                             Logo = "http://dotnethow.net/images/cinemas/cinema-1.jpeg",
                             Description = "This is the description of the first cinema"
                         },
-                        new Cinema()
+                        new Profile()
                         {
                             Name = "Cinema 2",
                             Logo = "http://dotnethow.net/images/cinemas/cinema-2.jpeg",
                             Description = "This is the description of the first cinema"
                         },
-                        new Cinema()
+                        new Profile()
                         {
                             Name = "Cinema 3",
                             Logo = "http://dotnethow.net/images/cinemas/cinema-3.jpeg",
                             Description = "This is the description of the first cinema"
                         },
-                        new Cinema()
+                        new Profile()
                         {
                             Name = "Cinema 4",
                             Logo = "http://dotnethow.net/images/cinemas/cinema-4.jpeg",
                             Description = "This is the description of the first cinema"
                         },
-                        new Cinema()
+                        new Profile()
                         {
                             Name = "Cinema 5",
                             Logo = "http://dotnethow.net/images/cinemas/cinema-5.jpeg",
@@ -146,7 +146,7 @@ namespace eTickets.Data
                             Name = "Life",
                             Description = "This is the Life movie description",
                             ImageURL = "http://dotnethow.net/images/movies/movie-3.jpeg",
-                            CinemaId = 3,
+                            ProfileId = 3,
                             DirectorId = 3,
                             MovieCategory = MovieCategory.Documentary
                         },
@@ -155,7 +155,7 @@ namespace eTickets.Data
                             Name = "The Shawshank Redemption",
                             Description = "This is the Shawshank Redemption description",
                             ImageURL = "http://dotnethow.net/images/movies/movie-1.jpeg",
-                            CinemaId = 1,
+                            ProfileId = 1,
                             DirectorId = 1,
                             MovieCategory = MovieCategory.Action
                         },
@@ -164,7 +164,7 @@ namespace eTickets.Data
                             Name = "Ghost",
                             Description = "This is the Ghost movie description",
                             ImageURL = "http://dotnethow.net/images/movies/movie-4.jpeg",
-                            CinemaId = 4,
+                            ProfileId = 4,
                             DirectorId = 4,
                             MovieCategory = MovieCategory.Horror
                         },
@@ -173,7 +173,7 @@ namespace eTickets.Data
                             Name = "Race",
                             Description = "This is the Race movie description",
                             ImageURL = "http://dotnethow.net/images/movies/movie-6.jpeg",
-                            CinemaId = 1,
+                            ProfileId = 1,
                             DirectorId = 2,
                             MovieCategory = MovieCategory.Documentary
                         },
@@ -182,7 +182,7 @@ namespace eTickets.Data
                             Name = "Scoob",
                             Description = "This is the Scoob movie description",
                             ImageURL = "http://dotnethow.net/images/movies/movie-7.jpeg",
-                            CinemaId = 1,
+                            ProfileId = 1,
                             DirectorId = 3,
                             MovieCategory = MovieCategory.Cartoon
                         },
@@ -191,7 +191,7 @@ namespace eTickets.Data
                             Name = "Cold Soles",
                             Description = "This is the Cold Soles movie description",
                             ImageURL = "http://dotnethow.net/images/movies/movie-8.jpeg",
-                            CinemaId = 1,
+                            ProfileId = 1,
                             DirectorId = 5,
                             MovieCategory = MovieCategory.Drama
                         }

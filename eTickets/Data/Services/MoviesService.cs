@@ -24,7 +24,7 @@ namespace eTickets.Data.Services
                 Name = data.Name,
                 Description = data.Description,
                 ImageURL = data.ImageURL,
-                CinemaId = data.CinemaId,
+                ProfileId = data.ProfileId,
                 MovieCategory = data.MovieCategory,
                 DirectorId = data.DirectorId
             };
@@ -47,7 +47,7 @@ namespace eTickets.Data.Services
         public async Task<Movie> GetMovieByIdAsync(int id)
         {
             var movieDetails = await _context.Movies
-                .Include(c => c.Cinema)
+                .Include(c => c.Profile)
                 .Include(p => p.Director)
                 .Include(am => am.Actors_Movies).ThenInclude(a => a.Actor)
                 .FirstOrDefaultAsync(n => n.Id == id);
@@ -60,7 +60,7 @@ namespace eTickets.Data.Services
             var response = new NewMovieDropdownsVM()
             {
                 Actors = await _context.Actors.OrderBy(n => n.FullName).ToListAsync(),
-                Cinemas = await _context.Cinemas.OrderBy(n => n.Name).ToListAsync(),
+                Profiles = await _context.Profiles.OrderBy(n => n.Name).ToListAsync(),
                 Directors = await _context.Directors.OrderBy(n => n.FullName).ToListAsync()
             };
 
@@ -76,7 +76,7 @@ namespace eTickets.Data.Services
                 dbMovie.Name = data.Name;
                 dbMovie.Description = data.Description;
                 dbMovie.ImageURL = data.ImageURL;
-                dbMovie.CinemaId = data.CinemaId;
+                dbMovie.ProfileId = data.ProfileId;
                 dbMovie.MovieCategory = data.MovieCategory;
                 dbMovie.DirectorId = data.DirectorId;
                 await _context.SaveChangesAsync();

@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 
 namespace eTickets.Data.Services
 {
-    public interface ICinemasService:IEntityBaseRepository<Cinema>
+    public class ProfilesService:EntityBaseRepository<Profile>, IProfilesService
     {
+        public ProfilesService(AppDbContext context) : base(context)
+        {
+        }
     }
 }

@@ -36,9 +36,9 @@ namespace eTickets.Models
         [Required(ErrorMessage = "Movie actor(s) is required")]
         public List<int> ActorIds { get; set; }
 
-        [Display(Name = "Select a cinema")]
-        [Required(ErrorMessage = "Movie cinema is required")]
-        public int CinemaId { get; set; }
+        [Display(Name = "Profile")]
+        [Required(ErrorMessage = "Profile is required")]
+        public int ProfileId { get; set; }
 
         [Display(Name = "Select a Director")]
         [Required(ErrorMessage = "Movie Director is required")]

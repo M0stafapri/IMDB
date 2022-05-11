@@ -26,14 +26,14 @@ namespace eTickets.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
-            var allMovies = await _service.GetAllAsync(n => n.Cinema);
+            var allMovies = await _service.GetAllAsync(n => n.Profile);
             return View(allMovies);
         }
 
         [AllowAnonymous]
         public async Task<IActionResult> Filter(string searchString)
         {
-            var allMovies = await _service.GetAllAsync(n => n.Cinema);
+            var allMovies = await _service.GetAllAsync(n => n.Profile);
 
             if (!string.IsNullOrEmpty(searchString))
             {
@@ -60,7 +60,7 @@ namespace eTickets.Controllers
         {
             var movieDropdownsData = await _service.GetNewMovieDropdownsValues();
 
-            ViewBag.Cinemas = new SelectList(movieDropdownsData.Cinemas, "Id", "Name");
+            ViewBag.Profiles = new SelectList(movieDropdownsData.Profiles, "Id", "Name");
             ViewBag.Directors = new SelectList(movieDropdownsData.Directors, "Id", "FullName");
             ViewBag.Actors = new SelectList(movieDropdownsData.Actors, "Id", "FullName");
 
@@ -74,7 +74,7 @@ namespace eTickets.Controllers
             {
                 var movieDropdownsData = await _service.GetNewMovieDropdownsValues();
 
-                ViewBag.Cinemas = new SelectList(movieDropdownsData.Cinemas, "Id", "Name");
+                ViewBag.Profiles = new SelectList(movieDropdownsData.Profiles, "Id", "Name");
                 ViewBag.Directors = new SelectList(movieDropdownsData.Directors, "Id", "FullName");
                 ViewBag.Actors = new SelectList(movieDropdownsData.Actors, "Id", "FullName");
   
@@ -100,13 +100,13 @@ namespace eTickets.Controllers
                 Description = movieDetails.Description,
                 ImageURL = movieDetails.ImageURL,
                 MovieCategory = movieDetails.MovieCategory,
-                CinemaId = movieDetails.CinemaId,
+                ProfileId = movieDetails.ProfileId,
                 DirectorId = movieDetails.DirectorId,
                 ActorIds = movieDetails.Actors_Movies.Select(n => n.ActorId).ToList(),
             };
 
             var movieDropdownsData = await _service.GetNewMovieDropdownsValues();
-            ViewBag.Cinemas = new SelectList(movieDropdownsData.Cinemas, "Id", "Name");
+            ViewBag.Profiles = new SelectList(movieDropdownsData.Profiles, "Id", "Name");
             ViewBag.Directors = new SelectList(movieDropdownsData.Directors, "Id", "FullName");
             ViewBag.Actors = new SelectList(movieDropdownsData.Actors, "Id", "FullName");
 
@@ -122,7 +122,7 @@ namespace eTickets.Controllers
             {
                 var movieDropdownsData = await _service.GetNewMovieDropdownsValues();
 
-                ViewBag.Cinemas = new SelectList(movieDropdownsData.Cinemas, "Id", "Name");
+                ViewBag.Profiles = new SelectList(movieDropdownsData.Profiles, "Id", "Name");
                 ViewBag.Directors = new SelectList(movieDropdownsData.Directors, "Id", "FullName");
                 ViewBag.Actors = new SelectList(movieDropdownsData.Actors, "Id", "FullName");
 

@@ -39,7 +39,7 @@ namespace eTickets.Migrations
 
             migrationBuilder.AlterColumn<string>(
                 name: "Name",
-                table: "Cinemas",
+                table: "Profiles",
                 type: "nvarchar(max)",
                 nullable: false,
                 defaultValue: "",
@@ -49,7 +49,7 @@ namespace eTickets.Migrations
 
             migrationBuilder.AlterColumn<string>(
                 name: "Logo",
-                table: "Cinemas",
+                table: "Profiles",
                 type: "nvarchar(max)",
                 nullable: false,
                 defaultValue: "",
@@ -59,7 +59,7 @@ namespace eTickets.Migrations
 
             migrationBuilder.AlterColumn<string>(
                 name: "Description",
-                table: "Cinemas",
+                table: "Profiles",
                 type: "nvarchar(max)",
                 nullable: false,
                 defaultValue: "",
@@ -185,7 +185,7 @@ namespace eTickets.Migrations
 
             migrationBuilder.AlterColumn<string>(
                 name: "Name",
-                table: "Cinemas",
+                table: "Profiles",
                 type: "nvarchar(max)",
                 nullable: true,
                 oldClrType: typeof(string),
@@ -193,7 +193,7 @@ namespace eTickets.Migrations
 
             migrationBuilder.AlterColumn<string>(
                 name: "Logo",
-                table: "Cinemas",
+                table: "Profiles",
                 type: "nvarchar(max)",
                 nullable: true,
                 oldClrType: typeof(string),
@@ -201,7 +201,7 @@ namespace eTickets.Migrations
 
             migrationBuilder.AlterColumn<string>(
                 name: "Description",
-                table: "Cinemas",
+                table: "Profiles",
                 type: "nvarchar(max)",
                 nullable: true,
                 oldClrType: typeof(string),
