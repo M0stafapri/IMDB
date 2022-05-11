@@ -38,7 +38,7 @@ namespace eTickets.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Prducers",
+                name: "Directors",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -49,7 +49,7 @@ namespace eTickets.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Prducers", x => x.Id);
+                    table.PrimaryKey("PK_Directors", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -137,7 +137,7 @@ namespace eTickets.Migrations
                 name: "Profile");
 
             migrationBuilder.DropTable(
-                name: "Prducers");
+                name: "Directors");
         }
     }
 }
