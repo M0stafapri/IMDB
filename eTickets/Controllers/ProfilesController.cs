@@ -12,7 +12,6 @@ using System.Threading.Tasks;
 
 namespace eTickets.Controllers
 {
-    [Authorize(Roles = UserRoles.Admin)]
     public class ProfilesController : Controller
     {
         private readonly IProfilesService _service;
@@ -37,7 +36,7 @@ namespace eTickets.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("Logo,Name,Description")]Profile profile)
+        public async Task<IActionResult> Create([Bind("ProfilePicture,Name,Description")]Profile profile)
         {
             if (!ModelState.IsValid) return View(profile);
             await _service.AddAsync(profile);
@@ -62,7 +61,7 @@ namespace eTickets.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Logo,Name,Description")] Profile profile)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ProfilePicture,Name,Description")] Profile profile)
         {
             if (!ModelState.IsValid) return View(profile);
             await _service.UpdateAsync(id, profile);

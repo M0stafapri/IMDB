@@ -12,15 +12,15 @@ namespace eTickets.Models
         [Key]
         public int Id { get; set; }
 
-        [Display(Name = "Cinema Logo")]
-        [Required(ErrorMessage = "Cinema logo is required")]
-        public string Logo { get; set; }
+        [Display(Name = "Profile Picture")]
+        [Required(ErrorMessage = "Profile Picture is required")]
+        public string ProfilePicture { get; set; }
 
-        [Display(Name = "Cinema Name")]
-        [Required(ErrorMessage = "Cinema name is required")]
+        [Display(Name = "Full Name")]
+        [Required(ErrorMessage = "Fullname is required")]
         public string Name { get; set; }
 
-        [Display(Name = "Description")]
+        [Display(Name = "Brief Information about you")]
         [Required(ErrorMessage = "Cinema description is required")]
         public string Description { get; set; }
 

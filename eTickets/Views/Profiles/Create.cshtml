@@ -15,12 +15,12 @@
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
                     <div class="form-group text-center">
-                        <img id="ProfileLogoPreview"  class="border-info rounded-circle" style="max-width: 150px" />
+                        <img id="ProfilePicturePreview"  class="border-info rounded-circle" style="max-width: 150px" />
                     </div>
                     <div class="form-group">
-                        <label asp-for="Logo" class="control-label"></label>
-                        <input asp-for="Logo" class="form-control" />
-                        <span asp-validation-for="Logo" class="text-danger"></span>
+                        <label asp-for="ProfilePicture" class="control-label"></label>
+                        <input asp-for="ProfilePicture" class="form-control" />
+                        <span asp-validation-for="ProfilePicture" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="Name" class="control-label"></label>
@@ -47,12 +47,12 @@
     <script>
 
         $(document).ready(function () {
-            var output = document.getElementById('ProfileLogoPreview');
-            output.src = $("#Logo").val();
+            var output = document.getElementById('ProfilePicturePreview');
+            output.src = $("#ProfilePicture").val();
         })
 
-        $("#Logo").on("change", function () {
-            var output = document.getElementById('ProfileLogoPreview');
+        $("#ProfilePicture").on("change", function () {
+            var output = document.getElementById('ProfilePicturePreview');
             output.src = $(this).val();
         })
     </script>
