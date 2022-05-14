@@ -41,6 +41,8 @@ namespace eTickets
             services.AddScoped<IProfilesService, ProfilesService>();
             services.AddScoped<IMoviesService, MoviesService>();
             services.AddScoped<IFavoritesService, FavoritesService>();
+            services.AddScoped<ICommentService, CommentService>();
+            services.AddScoped<ICommentService, CommentService>();
 
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();

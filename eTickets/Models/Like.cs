@@ -1,24 +1,25 @@
-﻿using eTickets.Data.Base;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace eTickets.Models
 {
-    public class Comment : IEntityBase
+    public class Like
     {
         [Key]
-        public int Id { get; set; }
+        public String Id { get; set; }
 
         [Display(Name = "Body")]
         [Required(ErrorMessage = "Body is required")]
-        public string Body { get; set; }
+        public string Type { get; set; }
 
-        public int MovieId  { get; set; }
+        public int LikeId { get; set; }
+        [ForeignKey("LikeId")]
 
         //Relationships
-        public List<Movie> Movies { get; set; }
+        public Movie Movies { get; set; }
     }
 }

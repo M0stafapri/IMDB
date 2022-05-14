@@ -40,5 +40,7 @@ namespace eTickets.Data
         public DbSet<Favorite> Favorites { get; set; }
         public DbSet<FavoriteItem> FavoriteItems { get; set; }
         public DbSet<FavoriteListItem> FavoritesListItems { get; set; }
+
+        public DbSet<Comment> Comments { get; set; }
     }
 }
