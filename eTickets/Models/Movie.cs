@@ -31,5 +31,10 @@ namespace eTickets.Models
         public int DirectorId { get; set; }
         [ForeignKey("DirectorId")]
         public Director Director { get; set; }
+
+        //Comment
+        public String CommentId { get; set; }
+        [ForeignKey("CommentId")]
+        public Comment Comment { get; set; }
     }
 }
