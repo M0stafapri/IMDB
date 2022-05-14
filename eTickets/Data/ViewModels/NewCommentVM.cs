@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace eTickets.Data.ViewModels
+namespace eTickets.Models
 {
     public class NewCommentVM
     {
@@ -17,6 +17,6 @@ namespace eTickets.Data.ViewModels
 
         //Comment
         //public string MovieId  { get; set; }
-        public int MovieId = 4;
+        public int MovieId = 2;
     }
 }

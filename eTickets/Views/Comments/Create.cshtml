@@ -1,5 +1,5 @@
-﻿@model eTickets.Models.Comment
-
+﻿@model NewCommentVM
+@using eTickets.Data;
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -44,5 +44,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index","Papers")
+    @Html.ActionLink("Back to List", "Index","Movies")
 </div>
