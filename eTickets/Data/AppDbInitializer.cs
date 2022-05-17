@@ -90,8 +90,8 @@ namespace eTickets.Data
                         },
                         new Actor()
                         {
-                            FullName = "Actor 5",
-                            Bio = "This is the Bio of the second actor",
+                            FullName = "Will Smith",
+                            Bio = "Willard Carroll Smith II, also known by his stage name the Fresh Prince, is an American actor, rapper, and producer. ",
                             ProfilePictureURL = "http://dotnethow.net/images/actors/actor-5.jpeg"
                         }
                     });
@@ -129,9 +129,9 @@ namespace eTickets.Data
                         },
                         new Director()
                         {
-                            FullName = "Director 5",
-                            Bio = "This is the Bio of the second actor",
-                            ProfilePictureURL = "http://dotnethow.net/images/producers/producer-5.jpeg"
+                            FullName = "David Lynch",
+                            Bio = "David Keith Lynch is an American filmmaker, painter, visual artist, actor, musician, and writer. A recipient of an Academy Honorary Award in 2019,",
+                            ProfilePictureURL = "https://assets.vogue.com/photos/5dc5ddc4d774470008582a63/master/pass/David%20Lynch%20by%20Josh%20Telles%201.jpg"
                         }
                     });
                     context.SaveChanges();
@@ -153,10 +153,19 @@ namespace eTickets.Data
                         new Movie()
                         {
                             Name = "The Shawshank Redemption",
-                            Description = "This is the Shawshank Redemption description",
+                            Description = "Andy Dufresne, a successful banker, is arrested for the murders of his wife and her lover, and is sentenced to life imprisonment at the Shawshank prison. He becomes the most unconventional prisoner.",
                             ImageURL = "http://dotnethow.net/images/movies/movie-1.jpeg",
                             ProfileId = 1,
                             DirectorId = 1,
+                            MovieCategory = MovieCategory.Action
+                        },
+                        new Movie()
+                        {
+                            Name = "Spider-Man: No Way Home",
+                            Description = "Peter Parker seeks Doctor Strange's help to make people forget about Spiderman's identity. However, when the spell he casts gets corrupted, several unwanted guests enter their universe.",
+                            ImageURL = "https://media.elcinema.com/uploads/_315x420_a4e5ad03bb02f5ea56f70584b03e442f5e9e58ca79249ff9bc0fdb7f25d8052e.jpg",
+                            ProfileId = 1,
+                            DirectorId = 2,
                             MovieCategory = MovieCategory.Action
                         },
                         new Movie()
@@ -179,12 +188,21 @@ namespace eTickets.Data
                         },
                         new Movie()
                         {
-                            Name = "Scoob",
-                            Description = "This is the Scoob movie description",
-                            ImageURL = "http://dotnethow.net/images/movies/movie-7.jpeg",
+                            Name = "Inception",
+                            Description = "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O",
+                            ImageURL = "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_FMjpg_UX1000_.jpg",
                             ProfileId = 1,
                             DirectorId = 3,
-                            MovieCategory = MovieCategory.Cartoon
+                            MovieCategory = MovieCategory.Action
+                        },
+                        new Movie()
+                        {
+                            Name = "Uncharted",
+                            Description = "Victor Sullivan recruits Nathan Drake to help him find the lost fortune of Ferdinand Magellan. However, they face competition from Santiago Moncada, who believes that the treasure belongs to him.",
+                            ImageURL = "https://m.media-amazon.com/images/M/MV5BMWEwNjhkYzYtNjgzYy00YTY2LThjYWYtYzViMGJkZTI4Y2MyXkEyXkFqcGdeQXVyNTM0OTY1OQ@@._V1_.jpg",
+                            ProfileId = 1,
+                            DirectorId = 2,
+                            MovieCategory = MovieCategory.Drama
                         },
                         new Movie()
                         {

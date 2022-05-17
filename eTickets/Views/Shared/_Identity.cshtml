@@ -21,11 +21,6 @@ else
             <i class="bi bi-person-badge"></i> Hello @UserManager.GetUserName(User)
         </button>
         <ul class="dropdown-menu" aria-labelledby="profile-btn">
-            <li>
-                <a class="dropdown-item" asp-controller="Favorites" asp-action="Index">
-                    <i class="bi bi-list"></i> Favorites
-                </a>
-            </li>
 
             @if (User.IsInRole("Admin"))
             {
